@@ -17,9 +17,6 @@ function run(n) {
 }
 
 function smallestFactor(n) {
-    if (n <= 1){
-        throw new IllegalArgumentException();
-    }
     for (var i = 2, end = Math.sqrt(n); i <= end; i++) {
         if (n % i == 0){
             return i
