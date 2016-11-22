@@ -6,12 +6,15 @@
 //
 // What is the smallest number that is evenly divisible by all of the numbers
 // from 1 to 20?
+
 function gcd(a, b) {
-    var x = a, y = b, result
+    var x = a,
+        y = b,
+        m
     while (y != 0) {
-        result = x % y
+        m = x % y
         x = y
-        y = result
+        y = m
     }
     return x
 }
@@ -20,12 +23,12 @@ function lcm(a, b) {
     return (a * b) / gcd(a, b)
 }
 
-function main(min, max){
-	var n = min
-	for (var i = min; i <= max; i++) {
-    	n = lcm(n, i)
-	}
-	return n
+function main(min, max) {
+    var n = min
+    for (var i = min; i <= max; i++) {
+        n = lcm(n, i)
+    }
+    return n
 }
 
 // TODO: return your answer for this prompt.
