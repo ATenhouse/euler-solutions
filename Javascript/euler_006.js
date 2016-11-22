@@ -13,12 +13,12 @@
 // Find the difference between the sum of the squares of the first one
 // hundred natural numbers and the square of the sum.
 
-function main(max){
-	for (var i = max, base = 0, sum_of_squares = 0; i >= 0; i--) {
-		base += i;
-		sum_of_squares += i*i;
-	}
-	return (base * base - sum_of_squares);
+function main(max) {
+    for (var i = max, base = 0, sum_of_squares = 0; i >= 0; i--) {
+        base += i;
+        sum_of_squares += i * i;
+    }
+    return (base * base) - sum_of_squares;
 }
 
 return main(100)
