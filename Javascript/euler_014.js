@@ -21,22 +21,24 @@
 
 var max_length = 1,
     largest_start = 0;
-for (var i = 999999; i >= 0; i--) {
-    var inner_length = 1, n = i
+for (var i = 999999; i > 0; i--) {
+    var inner_length = 1,
+        n = i
     while (n > 1) {
         if (n % 2 == 0) {
-        	n /= 2
-        	inner_length +=1
+            n /= 2
+            inner_length += 1
         } else {
             n = (3 * n) + 1
-            inner_length += 1 
+            inner_length += 1
         }
     }
-    if(inner_length > max_length){
-    	max_length = inner_length
-    	largest_start = i
+    if (inner_length > max_length) {
+        max_length = inner_length
+        largest_start = i
     }
 }
 
 // TODO: return your answer for this prompt.
+// console.log(largest_start)
 return largest_start;
