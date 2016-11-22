@@ -32,10 +32,10 @@ function getAnswer(n) {
     var answer = 1
     for (var i = 0; i < n.length - 12; i++) {
         var inner = 1
-        for (var j = i; j < i + 13; j++){
+        for (var j = i; j < i + 13; j++) {
             inner *= n[j]
         }
-        if (inner > answer){
+        if (inner > answer) {
             answer = inner
         }
     }
