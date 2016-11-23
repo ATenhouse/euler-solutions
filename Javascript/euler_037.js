@@ -12,13 +12,41 @@
 // NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
 function main() {
-    var out = []
-    for (var i = 1000000; i >= 8; i--) {
+    var i = 8,
+        count = 0,
+        out = 0;
+    while (count < 11) {
         if (bigCheck(i)) {
-            out.push(i)
+            out += i;
+            count++;
+        }
+        i++;
+    }
+    return out
+}
+
+function seive(n) {
+    var i, j;
+    var prime = new Array(n);
+    prime.fill(true);
+
+    for (i = 2; i * i < n; i++) {
+        if (prime[i]) {
+            for (j = 0; i * i + i * j < n; j++) {
+                prime[i * i + i * j] = false;
+            }
         }
     }
-    return out.reduce((a,b) => a + b)
+
+    var cnt = 0, sum = 0;
+    for (i = 8; i < n; i++) {
+        if (prime[i]) {
+            if(bigCheck(i)){
+            	sum += i
+            }
+        }
+    }
+    return sum
 }
 
 function bigCheck(s) {
@@ -64,4 +92,4 @@ function isPrime(n) {
 }
 
 // TODO: return your answer for this prompt.
-return main();
+return seive(1000000);
