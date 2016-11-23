@@ -11,20 +11,6 @@
 // 
 // NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
-function main() {
-    var i = 8,
-        count = 0,
-        out = 0;
-    while (count < 11) {
-        if (bigCheck(i)) {
-            out += i;
-            count++;
-        }
-        i++;
-    }
-    return out
-}
-
 function seive(n) {
     var i, j;
     var prime = new Array(n);
