@@ -23,11 +23,12 @@ function seive(n) {
         }
     }
 
-    var cnt = 0, sum = 0;
+    var cnt = 0,
+        sum = 0;
     for (i = 8; i < n; i++) {
         if (prime[i]) {
-            if(bigCheck(i)){
-            	sum += i
+            if (bigCheck(i)) {
+                sum += i
             }
         }
     }
