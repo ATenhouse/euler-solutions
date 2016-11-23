@@ -13,8 +13,7 @@
 
 function seive(n) {
     var i, j;
-    var prime = new Array(n);
-    prime.fill(true);
+    var prime = new Array(n).fill(true);
 
     for (i = 2; i * i < n; i++) {
         if (prime[i]) {
