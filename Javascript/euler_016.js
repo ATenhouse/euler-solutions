@@ -5,9 +5,9 @@
 //
 // What is the sum of the digits of the number 2^1000?
 
-var bigInt = require("big-integer")
-var big_n = bigInt(2).pow(1000).toString()
-var sum = 0
+var bigInt = require("big-integer");
+var big_n = bigInt(2).pow(1000).toString();
+var sum = 0;
 for (var i = 0; i < big_n.length; i++) {
     sum += Number(big_n[i]);
 }
