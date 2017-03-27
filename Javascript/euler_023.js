@@ -21,45 +21,54 @@
 // Find the sum of all the positive integers which cannot be written as the
 // sum of two abundant numbers.
 
-var abArr = [];
-
-function isAbundant(n) {
-    var out = [];
-    for (var i = (n / 2); i >= 0; i--) {
-        if (n % i == 0) {
-            out.push(i);
-        }
-    }
-    return n > out.reduce((a, b) => a + b);
-}
-
-function isSumOf2Abundants(n) {
-    for (var i = 0; i <= n; i++) {
-        if (abArr[i] && abArr[n - i]) {
-            return true;
+var isAbundant = function(number) {
+    var sum = 0;
+    var half = number / 2;
+    for (var i = 0; i <= half; i++) {
+        if (number % i === 0) {
+            sum += i;
+            if (sum > number) {
+                return true;
+            }
         }
     }
     return false;
-}
+};
 
-function run(n) {
+function run() {
+    var limit = 28124;
     var sum = 0;
-
-    // Compute look-up table
-    for (var i = 1; i <= n; i++) {
-        abArr[i] = isAbundant(i);
+    var i, j;
+    var list = {};
+    var second_list = {}
+    var sumList = new Set();
+    for (i = 1; i < limit; i++) {
+        list[i] = isAbundant(i);
     }
-
-    for (var i = 1; i <= n; i++) {
-        if (!isSumOf2Abundants(i)) {
-            sum += i;
+    for (i = 16; i <= limit - 1; i++)
+    {
+        for (j = 0; j <= limit; j++)
+        {
+            var tempNum = i + j;
+            if (tempNum in second_list)
+            {
+                continue;
+            }
+            else
+            {
+                if (tempNum < limit)
+                {
+                    if (list[i] === false || list[j] === false)
+                    {
+                        sumList.add(tempNum);
+                    }
+                }
+                second_list[tempNum] = true;
+            }
         }
     }
-
-    return String(sum);
+    var final = Array.from(sumList);
+    return final.reduce((p, v) => p + v);
 }
 
-// TODO: return your answer for this prompt.
-var x = run(28123);
-console.log(x);
-return run;
+return run();

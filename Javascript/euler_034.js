@@ -9,26 +9,27 @@
 // Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
 function factorial(n) {
-    var out = 1;
-    for (var i = n; i >= 2; i--) {
-        out *= i
+    var out = 1,
+        x = n;
+    while (x >= 2) {
+        out *= x;
+        x--;
     }
-    return out
+    return out;
 }
 
-function get(x) {
-    return String(x).split("").map(factorial).reduce((a, b) => a + b);
-}
+const get = (x) => String(x).split("").map(factorial).reduce((a, b) => a + b);
 
-function main(){
-	var sum = 0;
-	for (var i = 50000; i >= 3; i--) {
-		var y = get(i);
-		if(i == y){
-			sum += y;
-		}
-	}
-	return sum;
+function main() {
+    var sum = 0;
+    for (var i = 50000; i >= 3; i--) {
+        var y = get(i);
+        if (i == y) {
+            console.log(y);
+            sum += y;
+        }
+    }
+    return sum;
 }
 
 // TODO: return your answer for this prompt.
