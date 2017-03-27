@@ -24,24 +24,23 @@
 // divisors?
 
 function list_divisors(n) {
-    var sum = 1,
-        square = Math.sqrt(n)
+    var sum = 1;
+    var square = Math.sqrt(n);
     for (var i = 1; i <= square; i++) {
-        if (n % i == 0) {
-            sum += 2
+        if (n % i === 0) {
+            sum += 2;
         }
     }
-    return sum
+    return sum;
 }
 
 function find_five_hundred() {
-    var sum = 0
-    for (var i = 1;; i++) {
-        sum += i;
-        if (list_divisors(sum) > 500) {
-            return sum
-        }
+    var sum = 0;
+    var i = 1;
+    while(list_divisors(sum) < 500){
+        sum += i++;
     }
+    return sum;
 }
 
 // TODO: return your answer for this prompt.
