@@ -22,3 +22,4 @@ function run(threshold) {
 
 // TODO: return your answer for this prompt.
 var result = run(4000000);
+return result;
