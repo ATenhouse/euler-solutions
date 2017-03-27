@@ -7,22 +7,23 @@
 
 function run(n) {
     while (true) {
-        var p = smallestFactor(n)
-        if (p < n){
-            n /= p
-        }else{
-            return n
+        var p = smallestFactor(n);
+        if (p < n) {
+            n /= p;
+        } else {
+            return n;
         }
     }
 }
 
 function smallestFactor(n) {
+    // Starting FROM 2, which should be the smallest possible divisor ...
     for (var i = 2, end = Math.sqrt(n); i <= end; i++) {
-        if (n % i == 0){
-            return i
+        if ((n % i) === 0) {
+            return i;
         }
     }
-    return n
+    return n;
 }
 
 return run(600851475143);
