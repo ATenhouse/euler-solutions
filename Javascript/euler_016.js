@@ -7,10 +7,10 @@
 
 var bigInt = require("big-integer");
 var big_n = bigInt(2).pow(1000).toString();
-var sum = 0;
+var sum = bigInt(0);
 for (var i = 0; i < big_n.length; i++) {
-    sum += Number(big_n[i]);
+    sum = sum.add(big_n[i]);
 }
 
 // TODO: return your answer for this prompt.
-return sum;
+return sum.toJSNumber();
