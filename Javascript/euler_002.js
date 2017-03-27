@@ -8,19 +8,18 @@
 // 
 // Find the sum of all the even-valued terms in the sequence which do not
 // exceed four million.
+// Answer: 4613732
 
-function run() {
-    var sum = 0, x = 1, y = 2;
-    while (x <= 4000000) {
+function run(threshold) {
+    var sum = 0, x = 0, y = 1;
+    while (x <= threshold) {
         if (x % 2 == 0) {
             sum += x;
         }
-        var z = x + y;
-        x = y;
-        y = z;
+        [x, y] = [x + y, x];
     }
     return sum;
 }
 
 // TODO: return your answer for this prompt.
-return run();
+var result = run(4000000);
