@@ -24,9 +24,19 @@
 // 
 // What is the first term in the Fibonacci sequence to contain 1000 digits?
 
-function fib_gen() {
-	
+var bigInt = require('big-integer');
+
+function fib(n) {
+    var a = bigInt(1);
+    var b = bigInt(0);
+    var count = bigInt(0);
+    var target = bigInt(10).pow(999);
+    while (b.lesser(target)) {
+        count = count.add(1);
+        [a, b] = [a.add(b), a];
+    }
+    return count.toJSNumber();
 }
 
 // TODO: return your answer for this prompt.
-return /* solution */;
+return fib(1000);
