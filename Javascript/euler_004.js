@@ -20,8 +20,7 @@ function run() {
 }
 
 function is_palindrome(n) {
-    n = String(n)
-    return n == reverse(n)
+    return n == reverse(String(n))
 }
 
 function reverse(s) {

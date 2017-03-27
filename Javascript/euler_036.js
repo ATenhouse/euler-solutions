@@ -14,15 +14,22 @@ function dec2bin(dec) {
     return (dec >>> 0).toString(2);
 }
 
+function checkReverse(s) {
+    return String(s) == reverse(String(s));
+}
+
+function isBinRev(n) {
+    return checkReverse(dec2bin(n));
+}
+
 function main() {
-    var out = 0;
+    var palList = [];
     for (var i = 1000000; i >= 0; i--) {
-        var binary_version = dec2bin(i);
-        if (String(i) == reverse(String(i)) && String(binary_version) == reverse(String(binary_version))) {
-            out += i;
+        if (checkReverse(i)) {
+            palList.push(i);
         }
     }
-    return out
+    return palList.filter((x) => isBinRev(x)).reduce((a, b) => a + b);
 }
 
 function reverse(s) {
