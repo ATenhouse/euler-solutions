@@ -28,15 +28,15 @@ var n = "73167176531330624919225119674426574742355349194934" +
 
 function getAnswer(n) {
     n = n.split("").map(Number);
-    var answer = -1;
+    var a = [];
     for (var i = 0; i < n.length - 12; i++) {
         var inner = 1;
         for (var j = i; j < i + 13; j++) {
             inner *= n[j];
         }
-        answer = Math.max(inner, answer);
+        a.push(inner);
     }
-    return answer;
+    return Math.max(...a);
 }
 
 return getAnswer(n);
