@@ -8,7 +8,6 @@
 // 
 // Find the sum of all the even-valued terms in the sequence which do not
 // exceed four million.
-// Answer: 4613732
 
 function run(threshold) {
     var sum = 0, x = 0, y = 1;
