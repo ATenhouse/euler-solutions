@@ -8,28 +8,22 @@
 // from 1 to 20?
 
 function gcd(a, b) {
-    var x = a,
-        y = b,
-        m
-    while (y != 0) {
-        m = x % y
-        x = y
-        y = m
+    var [x, y] = [a, b];
+    while (y !== 0) {
+        [x, y] = [y, x % y];
     }
-    return x
+    return x;
 }
 
-function lcm(a, b) {
-    return (a * b) / gcd(a, b)
-}
+const lcm = (a, b) => (a * b) / gcd(a, b);
 
 function main(min, max) {
-    var n = min
-    for (var i = min; i <= max; i++) {
-        n = lcm(n, i)
+    var n = min;
+    while (min++ <= max) {
+        n = lcm(n, min);
     }
-    return n
+    return n;
 }
 
 // TODO: return your answer for this prompt.
-return main(1, 20)
+return main(1, 20);
