@@ -10,11 +10,9 @@
 // to right and right to left.
 // 
 // NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
-
 function seive(n) {
     var i, j;
     var prime = new Array(n).fill(true);
-
     for (i = 2; i * i < n; i++) {
         if (prime[i]) {
             for (j = 0; i * i + i * j < n; j++) {
@@ -22,17 +20,17 @@ function seive(n) {
             }
         }
     }
-
     var cnt = 0,
         sum = 0;
+    // Note: it's 8 because primes from 2 to 7 are not considered valid
     for (i = 8; i < n; i++) {
         if (prime[i]) {
             if (bigCheck(i)) {
-                sum += i
+                sum += i;
             }
         }
     }
-    return sum
+    return sum;
 }
 
 function bigCheck(s) {
@@ -42,7 +40,7 @@ function bigCheck(s) {
 
 function checkLeft(s) {
     while (s.length >= 1) {
-        if (isPrime(s) == false) {
+        if (isPrime(s) === false) {
             return false;
         }
         s = s.slice(1);
@@ -52,8 +50,8 @@ function checkLeft(s) {
 
 function checkRight(s) {
     while (s.length >= 1) {
-        if (isPrime(s) == false) {
-            return false
+        if (isPrime(s) === false) {
+            return false;
         }
         s = s.substring(0, s.length - 1);
     }
@@ -61,20 +59,23 @@ function checkRight(s) {
 }
 
 function isPrime(n) {
-    n = Number(n)
+    n = Number(n);
     if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) return false;
-    if (n % 2 == 0)
-        return (n == 2)
-    if (n % 3 == 0)
-        return (n == 3)
+    if (n % 2 === 0) {
+        return (n == 2);
+    }
+    if (n % 3 === 0) {
+        return (n == 3);
+    }
     var m = Math.sqrt(n);
     for (var i = 5; i <= m; i += 6) {
-        if (n % i == 0)
-            return false
-        else if (n % (i + 2) == 0)
-            return false
+        if (n % i === 0) {
+            return false;
+        } else if (n % (i + 2) === 0) {
+            return false;
+        }
     }
-    return true
+    return true;
 }
 
 // TODO: return your answer for this prompt.
