@@ -6,20 +6,21 @@
 // 
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
-function run(digits) {
-    var max_pal = -1;
-    for (var x = 1000; x > 0; x--) {
-        for (var y = 1000; y > 0; y--) {
+function run() {
+    var s = new Set();
+    for (var x = 1000; x > 100; x--) {
+        for (var y = 1000; y > 100; y--) {
             var prod = x * y;
             if (is_palindrome(prod)) {
-                max_pal = Math.max(max_pal, prod);
+                s.add(prod);
             }
         }
     }
-    return max_pal;
+    var t = Array.from(s);
+    return Math.max(...t);
 }
 
-const is_palindrome = n => n == reverse(String(n));
+const is_palindrome = n => String(n) === reverse(String(n));
 
 function reverse(s) {
     for (var i = s.length - 1, o = ''; i >= 0; o += s[i--]) {}
