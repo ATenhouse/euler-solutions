@@ -14,11 +14,13 @@
 // hundred natural numbers and the square of the sum.
 
 function main(max) {
-    for (var i = max, base = 0, sum_of_squares = 0; i >= 0; i--) {
-        base += i;
+    var sum_of_squares = 0;
+    var sum = 0;
+    for (var i = max; i >= 0; i--) {
         sum_of_squares += i * i;
+        sum += i;
     }
-    return (base * base) - sum_of_squares;
+    return (sum * sum) - sum_of_squares;
 }
 
-return main(100)
+return main(100);
