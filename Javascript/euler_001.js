@@ -8,9 +8,9 @@
 
 var total = 0;
 for (var i = 999; i >= 0; i--) {
-	if(i%3 === 0 || i % 5 === 0) {
-		total += i;
-	}
+    if (i % 3 === 0 || i % 5 === 0) {
+        total += i;
+    }
 }
 
 // TODO: return your answer for this prompt.
