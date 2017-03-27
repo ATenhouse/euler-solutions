@@ -108,13 +108,9 @@ var s = ["37107287533902102798797998220837590246510135740250",
     "53503534226472524250874054075591789781264330331690"
 ]
 
-var sum = 0
-
+var sum = bigInt(0)
 for (var i = s.length - 1; i >= 0; i--) {
-    var x = Number(s[i])
-        // for some reason BigInt's native add and plus methods
-        // fail to work within this for loop.
-    sum += x
+    sum = sum.plus(s[i]);
 }
 
-return bigInt(sum).toString().slice(0, 10)
+return sum.toString().slice(0, 10)
