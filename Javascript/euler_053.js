@@ -29,10 +29,9 @@ const combo = (n, r) => (factorial(n) / (factorial(r) * factorial(n - r)));
 
 var count = 0;
 for (var i = 1; i <= 100; i++) {
-    for (var j = i; j >= 1; j--) {
-        if (combo(i, j) > 1000000) {
-            count++;
-        }
+    var j = i;
+    while (j--) {
+        (combo(i, j) > 1000000) && count++;
     }
 }
 
