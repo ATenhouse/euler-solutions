@@ -43,21 +43,30 @@ function reverseString(s) {
     return o;
 }
 
+var m = {};
+
 function IsLychrel(n) {
     var testNumber = bigInt(n);
+    var val = "";
     for (var i = 0; i <= 50; i++) {
         var rev_t = reverseString(testNumber.toString());
         testNumber = testNumber.add(rev_t);
-        var val = testNumber.toString();
+        val = testNumber.toString();
+        if (val in m) {
+            return m[val] == 50;
+        }
         if (isPalindrome(val)) {
+            m[val] = i;
             return false;
         }
         testNumber = bigInt(val);
     }
+    m[val] = 50;
     return true;
 }
 
 var count = 0;
+var out = [];
 for (var j = 10000; j >= 1; j--) {
     var x = IsLychrel(j);
     if (x === true) {
