@@ -6,7 +6,12 @@
 // 
 // How many routes are there through a 20 * 20 grid?
 
-
+var width = 20, paths = 1;
+ 
+for (var i = 0; i < width; i++) {
+    paths *= (2 * width) - i;
+    paths /= i + 1;
+}
 
 // TODO: return your answer for this prompt.
-return /* solution */;
+return paths;
