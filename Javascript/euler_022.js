@@ -28,6 +28,7 @@ for (var i in array) {
     var position = Number(i) + 1;
     var name = array[i].split('"').join('').toLowerCase();
     end += name_value(name) * position;
+    console.log("END:", end);
 }
 
 // TODO: return your answer for this prompt.
