@@ -15,17 +15,22 @@
 // Find the sum of all the numbers that can be written as the sum of fifth
 // powers of their digits.
 
-function run() {
-    var output = 0;
-    for (var i = 250000; i >= 2; i--) {
-        var splitty = String(i).split("");
-        var x = splitty.map((a) => Math.pow(Number(a), 5)).reduce((a, b) => a + b);
-        if (i == x) {
-            output += i;
-        }
+function sum_of_fifth(n) {
+    var sum = 0;
+    while (n > 0) {
+        var r = n % 10;
+        sum += (r ** 5);
+        n = ~~(n / 10);
     }
-    return output;
+    return sum;
+}
+
+var list = []
+for (var i = 200000; i >= 2; i--) {
+    if (i === sum_of_fifth(i)) {
+        list.push(i);
+    }
 }
 
 // TODO: return your answer for this prompt.
-return run();
+return list.reduce((p, v) => p + v);
