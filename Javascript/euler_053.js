@@ -31,7 +31,9 @@ var count = 0;
 for (var i = 1; i <= 100; i++) {
     var j = i;
     while (j--) {
-        (combo(i, j) > 1000000) && count++;
+        if (combo(i, j) > 1000000) {
+            count++;
+        }
     }
 }
 
