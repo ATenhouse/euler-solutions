@@ -11,6 +11,5 @@ for (var n = 1; n < 10; n++) {
     s += Math.floor(1 / (1 - Math.log10(n)));
 }
 
-console.log(s);
 // TODO: return your answer for this prompt.
 return s;

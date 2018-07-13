@@ -14,7 +14,7 @@
 
 function name_value(s) {
     for (var i = s.length - 1, total = 0; i >= 0; i--) {
-        total += s.charCodeAt(i) - 96
+        total += s.charCodeAt(i) - 96;
     }
     return total;
 }
