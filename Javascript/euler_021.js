@@ -12,28 +12,28 @@
 // 
 // Evaluate the sum of all the amicable numbers under 10000.
 
-function find_divisors(n) {
-    var out_val = 0;
-    for (var i = (n / 2); i >= 1; i--) {
+function list_divisors(n) {
+    var sum = 0;
+    var i = Math.floor(n / 2);
+    while (i >= 1) {
         if (n % i === 0) {
-            out_val += i;
+            sum += i;
         }
+        i--;
     }
-    return out_val;
+    return sum;
 }
 
 var total_out = new Set();
-for (var a = 4; a <= 10000; a++) {
-    var b = find_divisors(a);
-    var c = find_divisors(b);
+var a = 10000;
+while (a--) {
+    var b = list_divisors(a);
+    var c = list_divisors(b);
     if (a == c && a !== b) {
         total_out.add(a);
         total_out.add(b);
     }
 }
-total_out = Array.from(total_out);
-
-var result = total_out.reduce((p, v) => p + v);
 
 // TODO: return your answer for this prompt.
-return result;
+return [...total_out].reduce((p, v) => p + v);
