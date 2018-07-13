@@ -12,7 +12,7 @@
 // 
 // Evaluate the sum of all the amicable numbers under 10000.
 
-function list_divisors(n) {
+function sum_of_divisors(n) {
     var sum = 0;
     var i = Math.floor(n / 2);
     while (i >= 1) {
@@ -27,8 +27,8 @@ function list_divisors(n) {
 var total_out = new Set();
 var a = 10000;
 while (a--) {
-    var b = list_divisors(a);
-    var c = list_divisors(b);
+    var b = sum_of_divisors(a);
+    var c = sum_of_divisors(b);
     if (a == c && a !== b) {
         total_out.add(a);
         total_out.add(b);

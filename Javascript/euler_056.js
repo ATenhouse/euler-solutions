@@ -14,8 +14,8 @@ const digitalSum = (n) => n.split("").map(Number).reduce((x, y) => x + y);
 
 var max = -1;
 for (var i = 100; i >= 1; i--) {
+    var big_i = bigInt(i);
     var j = 100;
-    var big_i = bigInt(i)
     while (j--) {
         var val = big_i.pow(j).toString();
         var d = digitalSum(val);
