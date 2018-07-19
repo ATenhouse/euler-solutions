@@ -25,7 +25,6 @@ function main() {
     for (var i = 50000; i >= 3; i--) {
         var y = get(i);
         if (i == y) {
-            console.log(y);
             sum += y;
         }
     }

@@ -12,4 +12,5 @@ for (var i = 1000; i > 0; i--) {
     var a = bigInt(i).pow(i);
     start = start.add(a);
 }
+
 return start.toString().slice(-10);
