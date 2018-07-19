@@ -13,12 +13,13 @@
 // Find the difference between the sum of the squares of the first one
 // hundred natural numbers and the square of the sum.
 
+const partialSum = n => (n * (n + 1)) / 2;
+
 function main(max) {
+    var sum = partialSum(100);
     var sum_of_squares = 0;
-    var sum = 0;
     for (var i = max; i >= 0; i--) {
         sum_of_squares += i * i;
-        sum += i;
     }
     return (sum * sum) - sum_of_squares;
 }

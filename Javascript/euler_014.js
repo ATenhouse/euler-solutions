@@ -19,30 +19,43 @@
 //
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-function sequence(n) {
+var m = {};
+
+function sequence(number) {
     var count = 0;
+    var n = number;
     while (n !== 1) {
+        if (m[n]) {
+            var x = m[n] + count;
+            m[number] = x;
+            return x;
+        }
         if (n % 2 === 0) {
-            n = n / 2;
+            n /= 2;
         } else {
             n = (3 * n) + 1;
         }
         count++;
     }
+    m[number] = count;
     return count;
 }
 
-var max_length = 0;
-var largest_start = 0;
-var i = 1000000;
-while (i) {
-    var inner_length = sequence(i);
-    if (inner_length > max_length) {
-        max_length = inner_length;
-        largest_start = i;
+function run(limit) {
+    var max_length = 0;
+    var largest_start = 0;
+    var i = 1;
+    while (i < limit) {
+        var inner_length = sequence(i);
+        if (inner_length > max_length) {
+            max_length = inner_length;
+            largest_start = i;
+        }
+        i++;
     }
-    i--;
+    return largest_start;
 }
 
 // TODO: return your answer for this prompt.
-return largest_start;
+// console.log(m);
+return run(1000000);

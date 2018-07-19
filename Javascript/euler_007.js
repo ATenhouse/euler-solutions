@@ -7,32 +7,40 @@
 // What is the 10001st prime number?
 
 function find_prime(n) {
-    for (var i = 2, count = 0;; i++) {
+    var out = 0;
+    for (var i = 2, count = 0; count < n; i++) {
         if (isPrime(i)) {
             count++;
-            if (count == n) {
-                return i;
-            }
+            out = i;
         }
     }
+    return out;
 }
 
+var m = {};
+
 function isPrime(n) {
-    if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) return false;
     if (n % 2 == 0) {
         return (n == 2);
     }
     if (n % 3 == 0) {
         return (n == 3);
     }
-    var m = Math.sqrt(n);
-    for (var i = 5; i <= m; i += 6) {
+    var x = Math.sqrt(n);
+    if (m[x] = false) {
+        m[n] = false;
+        return false;
+    }
+    for (var i = 5; i <= x; i += 6) {
         if (n % i == 0) {
+            m[i] = false;
             return false;
         } else if (n % (i + 2) == 0) {
+            m[i] = false;
             return false;
         }
     }
+    m[n] = true;
     return true;
 }
 

@@ -10,14 +10,16 @@
 // There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 // Find the product abc.
 
-var a;
-var c;
-
-for (var b = 1; b < 1000; b += 1) {
-    a = (500000 - 1000 * b) / (1000 - b);
-    if (Math.floor(a) === a) {
-        c = 1000 - a - b;
-        return a * b * c;
+function run() {
+    var a;
+    var c;
+    for (var b = 1; b < 1000; b += 1) {
+        a = (500000 - 1000 * b) / (1000 - b);
+        if (~~(a) === a) {
+            c = 1000 - a - b;
+            return a * b * c;
+        }
     }
 }
 
+return run();

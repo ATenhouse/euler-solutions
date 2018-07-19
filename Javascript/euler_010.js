@@ -6,35 +6,42 @@
 // Find the sum of all the primes below two million.
 
 function main(n) {
-    var sum = 0
-    for (var i = n; i >= 0; i--) {
-        if (isPrime(i)) {
-            sum += i
-        }
-    }
-    return sum
+    var arr = onlyTrue(sieve(n));
+    return arr.reduce((p, v) => p + v);
 }
 
+function generateBoolArray(n) {
+    var arr = {};
+    for (var i = 2; i <= n; i++) {
+        arr[i] = true;
+    }
+    return arr;
+}
 
-function isPrime(n) {
-    if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) {
-        return false
-    }
-    if (n % 2 == 0) {
-        return (n == 2)
-    }
-    if (n % 3 == 0) {
-        return (n == 3)
-    }
-    var m = Math.sqrt(n);
-    for (var i = 5; i <= m; i += 6) {
-        if (n % i == 0) {
-            return false
-        } else if (n % (i + 2) == 0) {
-            return false
+function onlyTrue(o) {
+    var a = o;
+    var out = [];
+    for (var i in a) {
+        if (a[i]) {
+            out.push(Number(i));
         }
     }
-    return true
+    return out;
+}
+
+function sieve(n) {
+    var s = Math.sqrt(n);
+    var a = generateBoolArray(n);
+    for (var i = 2; i <= s; i++) {
+        if (a[i]) {
+            var k = 0;
+            for (var j = 0; k <= n; j++) {
+                k = Math.pow(i, 2) + (i * j);
+                a[k] = false;
+            }
+        }
+    }
+    return a;
 }
 
 // TODO: return your answer for this prompt.

@@ -19,8 +19,9 @@ const lcm = (a, b) => (a * b) / gcd(a, b);
 
 function main(min, max) {
     var n = min;
-    while (min++ <= max) {
+    while (min <= max) {
         n = lcm(n, min);
+        min++;
     }
     return n;
 }

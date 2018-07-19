@@ -17,8 +17,8 @@ function run(n) {
 }
 
 function smallestFactor(n) {
-    // Starting FROM 2, which should be the smallest possible divisor ...
-    for (var i = 2, end = Math.sqrt(n); i <= end; i++) {
+    var end = Math.sqrt(n);
+    for (var i = 2; i <= end; i++) {
         if ((n % i) === 0) {
             return i;
         }
@@ -26,4 +26,5 @@ function smallestFactor(n) {
     return n;
 }
 
-return run(600851475143);
+var x = run(600851475143);
+return x;

@@ -53,7 +53,6 @@ t = onlyTrue(t);
 for (var i = t.length - 1; i >= 0; i--) {
     var value = t[i];
     if (isPandigital(value)) {
-        console.log(value);
         return value;
     }
 }

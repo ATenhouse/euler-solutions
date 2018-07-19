@@ -23,7 +23,7 @@
 // What is the value of the first triangle number to have over five hundred
 // divisors?
 
-function list_divisors(n) {
+function sum_divisors(n) {
     var sum = 1;
     var square = Math.sqrt(n);
     for (var i = 1; i <= square; i++) {
@@ -37,7 +37,7 @@ function list_divisors(n) {
 function find_five_hundred() {
     var sum = 0;
     var i = 1;
-    while(list_divisors(sum) < 500){
+    while (sum_divisors(sum) < 500) {
         sum += i++;
     }
     return sum;
