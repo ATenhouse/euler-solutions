@@ -25,7 +25,63 @@
 // expression that produces the maximum number of primes for consecutive
 // values of n, starting with n = 0.
 
+function formula(n, a, b) {
+    return (n * n) + (a * n) + b;
+}
+
+function eulerGen() {
+    var max_count = 0;
+    var max = [0, 0];
+    for (var x = -999; x < 999; x++) {
+        for (var y = x + 1; y < 999; y++) {
+            var i = 0,
+                count = 0;
+            var value = formula(i, x, y);
+            while (isPrime(value)) {
+                value = formula(i, x, y);
+                i++;
+                count++;
+            }
+            if (count > max_count) {
+                max_count = count;
+                max = [x, y];
+            }
+        }
+    }
+    console.log(max, max_count);
+    return max[0] * max[1];
+}
+
+var m = {};
+
+function isPrime(n) {
+    if (m[n]) {
+        return m[n];
+    }
+    if (n < 0) {
+        m[n] = false;
+        return false;
+    }
+    if (i == 1) {
+        return true;
+    }
+    if (n % 2 == 0) {
+        return n == 2;
+    }
+    if (n % 3 == 0) {
+        return n == 3;
+    }
+    var square = Math.sqrt(n);
+    for (var i = 5; i <= square; i += 6) {
+        if (n % i === 0) {
+            m[n] = false;
+            return false;
+        }
+    }
+    m[n] = true;
+    return true;
+}
 
 
 // TODO: return your answer for this prompt.
-return /* solution */;
+return eulerGen();
