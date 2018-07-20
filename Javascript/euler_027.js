@@ -29,11 +29,48 @@ function formula(n, a, b) {
     return (n * n) + (a * n) + b;
 }
 
+function generateBoolMap(n) {
+    var arr = {};
+    for (var i = 2; i <= n; i++) {
+        arr[i] = true;
+    }
+    return arr;
+}
+
+function onlyTrue(o) {
+    var a = o;
+    var out = [];
+    for (var i in a) {
+        if (a[i]) {
+            out.push(Number(i));
+        }
+    }
+    return out;
+}
+
+function sieve(n) {
+    var s = Math.sqrt(n);
+    var a = generateBoolMap(n);
+    for (var i = 2; i <= s; i++) {
+        if (a[i]) {
+            var k = 0;
+            for (var j = 0; k <= n; j++) {
+                k = Math.pow(i, 2) + (i * j);
+                a[k] = false;
+            }
+        }
+    }
+    return a;
+}
+
 function eulerGen() {
     var max_count = 0;
     var max = [0, 0];
+    var y_arr = sieve(1000);
+    y_arr = onlyTrue(y_arr);
     for (var x = -999; x < 999; x++) {
-        for (var y = x + 1; y < 999; y++) {
+        for (var i in y_arr) {
+            var y = y_arr[i];
             var i = 0,
                 count = 0;
             var value = formula(i, x, y);
@@ -48,7 +85,7 @@ function eulerGen() {
             }
         }
     }
-    console.log(max, max_count);
+    console.log(max);
     return max[0] * max[1];
 }
 
@@ -81,7 +118,6 @@ function isPrime(n) {
     m[n] = true;
     return true;
 }
-
 
 // TODO: return your answer for this prompt.
 return eulerGen();
