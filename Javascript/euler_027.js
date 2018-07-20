@@ -70,8 +70,8 @@ function eulerGen() {
     y_arr = onlyTrue(y_arr);
     for (var x = -999; x < 999; x++) {
         for (var i in y_arr) {
-            var y = y_arr[i];
-            var i = 0,
+            var y = y_arr[i],
+                i = 0,
                 count = 0;
             var value = formula(i, x, y);
             while (isPrime(value)) {
@@ -85,7 +85,6 @@ function eulerGen() {
             }
         }
     }
-    console.log(max);
     return max[0] * max[1];
 }
 

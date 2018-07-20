@@ -57,5 +57,4 @@ function run(limit) {
 }
 
 // TODO: return your answer for this prompt.
-// console.log(m);
 return run(1000000);

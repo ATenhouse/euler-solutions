@@ -1,12 +1,13 @@
 // Problem 10
 // ==========
-// 
+//
 // The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-// 
+//
 // Find the sum of all the primes below two million.
 
 function main(n) {
-    var arr = onlyTrue(sieve(n));
+    var s = sieve(n);
+    var arr = onlyTrue(s);
     return arr.reduce((p, v) => p + v);
 }
 

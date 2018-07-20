@@ -1,0 +1,161 @@
+
+
+-------------------------------
+Problem 001
+[32m233168[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 002
+[32m4613732[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 003
+[32m6857[39m is correct
+[36m1ms[39m run time
+-------------------------------
+Problem 004
+[32m906609[39m is correct
+[36m76ms[39m run time
+-------------------------------
+Problem 005
+[32m232792560[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 006
+[32m25164150[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 007
+[32m104743[39m is correct
+[36m42ms[39m run time
+-------------------------------
+Problem 008
+[32m23514624000[39m is correct
+[36m1ms[39m run time
+-------------------------------
+Problem 009
+[32m31875000[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 010
+[32m142913828922[39m is correct
+[36m385ms[39m run time
+-------------------------------
+Problem 012
+[32m76576500[39m is correct
+[36m240ms[39m run time
+-------------------------------
+Problem 013
+[32m5537376230[39m is correct
+[36m6ms[39m run time
+-------------------------------
+Problem 014
+[32m837799[39m is correct
+[36m220ms[39m run time
+-------------------------------
+Problem 015
+[32m137846528820[39m is correct
+[36m0ms[39m run time
+-------------------------------
+Problem 016
+[32m1366[39m is correct
+[36m1ms[39m run time
+-------------------------------
+Problem 020
+[32m648[39m is correct
+[36m1ms[39m run time
+-------------------------------
+Problem 021
+[32m31626[39m is correct
+[36m182ms[39m run time
+-------------------------------
+Problem 022
+[32m871198282[39m is correct
+[36m19ms[39m run time
+-------------------------------
+Problem 023
+[32m4179871[39m is correct
+[36m1020ms[39m run time
+-------------------------------
+Problem 024
+[31mundefined[39m is incorrect
+[36m0ms[39m run time
+-------------------------------
+Problem 025
+[32m4782[39m is correct
+[36m23ms[39m run time
+-------------------------------
+Problem 027
+[31mundefined[39m is incorrect
+[36m0ms[39m run time
+-------------------------------
+Problem 028
+[31mundefined[39m is incorrect
+[36m0ms[39m run time
+-------------------------------
+Problem 029
+[32m9183[39m is correct
+[36m72ms[39m run time
+-------------------------------
+Problem 030
+[32m443839[39m is correct
+[36m10ms[39m run time
+-------------------------------
+Problem 031
+[31mundefined[39m is incorrect
+[36m0ms[39m run time
+-------------------------------
+Problem 032
+[31mundefined[39m is incorrect
+[36m1ms[39m run time
+-------------------------------
+Problem 034
+[32m40730[39m is correct
+[36m53ms[39m run time
+-------------------------------
+Problem 036
+[32m872187[39m is correct
+[36m181ms[39m run time
+-------------------------------
+Problem 037
+[32m748317[39m is correct
+[36m140ms[39m run time
+-------------------------------
+Problem 041
+[32m7652413[39m is correct
+[36m1708ms[39m run time
+-------------------------------
+Problem 042
+[32m162[39m is correct
+[36m3ms[39m run time
+-------------------------------
+Problem 045
+[32m1533776805[39m is correct
+[36m18ms[39m run time
+-------------------------------
+Problem 048
+[32m9110846700[39m is correct
+[36m221ms[39m run time
+-------------------------------
+Problem 052
+[32m142857[39m is correct
+[36m39ms[39m run time
+-------------------------------
+Problem 053
+[32m4075[39m is correct
+[36m3ms[39m run time
+-------------------------------
+Problem 055
+[32m249[39m is correct
+[36m55ms[39m run time
+-------------------------------
+Problem 056
+[32m972[39m is correct
+[36m73ms[39m run time
+-------------------------------
+Problem 063
+[32m49[39m is correct
+[36m0ms[39m run time
+-------------------------------
+
+
