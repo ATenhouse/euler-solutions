@@ -11,11 +11,10 @@
 //
 // NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 function seive(n) {
-    var i, j;
     var prime = new Array(n).fill(true);
-    for (i = 2; i * i < n; i++) {
+    for (var i = 2; i * i < n; i++) {
         if (prime[i]) {
-            for (j = 0; i * i + i * j < n; j++) {
+            for (var j = 0; i * i + i * j < n; j++) {
                 prime[i * i + i * j] = false;
             }
         }
@@ -23,10 +22,10 @@ function seive(n) {
     var cnt = 0,
         sum = 0;
     // Note: it's 8 because primes from 2 to 7 are not considered valid
-    for (i = 8; i < n; i++) {
-        if (prime[i]) {
-            if (bigCheck(i)) {
-                sum += i;
+    for (var x = 8; x < n; x++) {
+        if (prime[x]) {
+            if (bigCheck(x)) {
+                sum += x;
             }
         }
     }
@@ -34,8 +33,8 @@ function seive(n) {
 }
 
 function bigCheck(s) {
-    s = String(s);
-    return checkLeft(s) && checkRight(s);
+    var t = String(s);
+    return checkLeft(t) && checkRight(t);
 }
 
 function checkLeft(s) {
@@ -58,9 +57,13 @@ function checkRight(s) {
     return true;
 }
 
+var nexus = {};
+
 function isPrime(n) {
     n = Number(n);
-    if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) return false;
+    if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) {
+        return false;
+    }
     if (n % 2 === 0) {
         return (n == 2);
     }
